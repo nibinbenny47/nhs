@@ -1,10 +1,10 @@
 <?php
 include("../connection.php");
 
-// Define the stored procedure name
+
 $procedure = "{call GetNeuromodulationDetails}";
 
-// Prepare and execute the stored procedure
+
 $stmt = sqlsrv_query($conn, $procedure);
 
 if ($stmt === false) {
