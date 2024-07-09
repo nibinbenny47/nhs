@@ -26,7 +26,7 @@
     if ($sql === false) {
         die(print_r(sqlsrv_errors(), true));
     } else {
-        echo "New record created successfully";
+        echo '<div class="message" style=" background-color: #04c25d;margin: 20px 0;border: 1px solid #c3e6cb;">New record created successfully</div>';
     }
      
   }
@@ -52,7 +52,15 @@
             color: red;
             font-size: 0.875em;
         }
+        .panel1{
+        background-color: #d6d0d0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        }
     </style>
+
 </head>
 
 
@@ -60,31 +68,35 @@
 <?php include("header.php");?>
 
     <div class="container mt-3">
-        <h1>Neuromodulation form</h1>
+        <h1>Neuromodulation Form</h1><br><br>
 
         <form action="" method="post">
-            <h2>Patient Details</h2>
-            <div class="mb-3 mt-3">
-                <label for="firstname">First Name:</label>
-                <input type="text" class="form-control" id="firstname" placeholder="Enter Firstname" name="firstname">
-            </div>
-            <div class="mb-3 mt-3">
-                <label for="surname">Surname:</label>
-                <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname">
-            </div>
-            <div class="mb-3 mt-3">
-                <label for="date_of_birth">Date of Birth:</label>
-                <input type="date" class="form-control" id="date_of_birth" placeholder="Enter date of birth"
-                    name="date_of_birth">
-            </div>
+            <h4>Patient Details</h4>
+            <div class="panel1" id="panel1">
+                <div class="mb-3 mt-3">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" required class="form-control" id="firstname" placeholder="Enter Firstname" name="firstname">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="surname">Surname:</label>
+                    <input type="text" required class="form-control" id="surname" placeholder="Enter surname" name="surname">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="date" required class="form-control" id="date_of_birth" placeholder="Enter date of birth"
+                        name="date_of_birth">
+                </div>
 
-            <div class="mb-3 mt-3">
-                <label for="age">Age:</label>
-                <input type="text" class="form-control" id="age" placeholder="Enter age" name="age">
+                <div class="mb-3 mt-3">
+                    <label for="age">Age:</label>
+                    <input type="text" class="form-control" id="age" placeholder="Enter age" name="age">
+                </div>
             </div>
+            <br>
 
 
-            <h2>Brief Pain Inventory(BPI)</h2>
+            <h4>Brief Pain Inventory(BPI)</h4>
+            <div class="panel1" id="panel1">
 
             <div class="mb-3 mt-3">
                 <label for="q1">How much relief have pain treatments or medications FROM THIS CLINIC provided?</label>
@@ -163,15 +175,18 @@
                     <span class="error" id="spanerrormsg-q12"></span>
                 </div>
             </div>
-            <h2>Total Score</h2>
+            </div>
+            <br>
+            <h4>Total Score</h4>
+            <div class="panel1" id="panel1">
             <div class="mb-3 mt-3">
                 <label for="total_score">Total score</label>
                 <input type="text" class="form-control" id="total_score" placeholder="Enter Total Score"
                     name="total_score">
             </div>
+            </div><br>
 
             <input type="submit" class="btn btn-primary" name="btnsave" value="save"/>
-            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         </form>
     </div>
 
