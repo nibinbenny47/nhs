@@ -1,3 +1,41 @@
+<?php
+  include("connection.php");
+  if(isset($_POST['btnsave'])){
+    $firstname=$_POST['firstname'];
+    $surname=$_POST['surname'];
+    $date_of_birth=$_POST['date_of_birth'];
+    $age=$_POST['age'];
+    $q1=$_POST['q1'];
+    $q2=$_POST['q2'];
+    $q3=$_POST['q3'];
+    $q4=$_POST['q4'];
+    $q5=$_POST['q5'];
+    $q6=$_POST['q6'];
+    $q7=$_POST['q7'];
+    $q8=$_POST['q8'];
+    $q9=$_POST['q9'];
+    $q10=$_POST['q10'];
+    $q11=$_POST['q11'];
+    $q12=$_POST['q12'];
+    $submitted_at=date('Y-m-d H:i:s');
+    $total_score=$_POST['total_score'];
+   
+    $query = "{call Insertneuromodulation(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+    $table_fields = array($firstname,$surname,$date_of_birth,$age,$q1,$q2,$q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10,$q11,$q12,$submitted_at,$total_score);
+    $sql = sqlsrv_query($conn, $query,$table_fields);
+    if ($sql === false) {
+        die(print_r(sqlsrv_errors(), true));
+    } else {
+        echo "New record created successfully";
+    }
+     
+  }
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +61,7 @@
     <div class="container mt-3">
         <h1>Neuromodulation form</h1>
 
-        <form action="/action_page.php">
+        <form action="" method="post">
             <h2>Patient Details</h2>
             <div class="mb-3 mt-3">
                 <label for="firstname">First Name:</label>
@@ -131,8 +169,8 @@
                     name="total_score">
             </div>
 
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="submit" class="btn btn-primary" name="btnsave" value="save"/>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         </form>
     </div>
 
