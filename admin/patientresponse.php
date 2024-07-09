@@ -48,6 +48,8 @@ if ($_GET["deleteid"]){
     </script>
 </head>
 <body>
+<?php include("header.php");?>
+
 <div class="container mt-3">
         <h1>Neuromodulation form</h1>
 

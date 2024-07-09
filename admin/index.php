@@ -30,6 +30,7 @@ if ($stmt === false) {
     <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
+<?php include("header.php");?>
 <div class="container mt-3">
   <h2>Neuromodulation form details</h2>
   <table id="formdetails" class="table table-hover">
