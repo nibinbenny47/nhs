@@ -19,7 +19,7 @@
         // Check if any rows are returned
         if ($row_count > 0) {
             // Redirect to dashboard
-            echo "user already registered";
+            echo '<div class="message" style=" background-color: #f53722;margin: 20px 0;border: 1px solid #c3e6cb;">user already registered</div>';
         } else {
             $query = "{call Insertuser(?,?)}";
             $table_fields = array($email,$password);
@@ -27,7 +27,8 @@
             if ($sql === false) {
                 die(print_r(sqlsrv_errors(), true));
             } else {
-                echo "New admin user created successfully";
+            echo '<div class="message" style=" background-color: #04c25d;margin: 20px 0;border: 1px solid #c3e6cb;">New admin user created successfully</div>';
+
                 header("Location: login.php");
             }
         }
@@ -58,11 +59,11 @@
             <h2>Admin Registration Form</h2>
             <div class="mb-3 mt-3">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <input type="email" required class="form-control" id="email" placeholder="Enter email" name="email">
             </div>
             <div class="mb-3 mt-3">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                <input type="password" required class="form-control" id="password" placeholder="Enter password" name="password">
             </div>
             <input type="submit" class="btn btn-primary" name="btnsave" value="Register"/>
 

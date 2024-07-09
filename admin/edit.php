@@ -68,16 +68,30 @@ if(isset($_POST['btnsave'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+    <style>
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+        .panel1{
+        background-color: #d6d0d0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        }
+    </style>
 </head>
 <body>
 <?php include("header.php");?>
 
 <div class="container mt-3">
-        <h1>Neuromodulation form</h1>
+        <h1>Edit Neuromodulation Form</h1><br><br>
 
         <form action="" method="post">
-            <h2>Patient Details</h2>
+            <h4>Patient Details</h4>
+            <div class="panel1" id="panel1">
+
             <div class="mb-3 mt-3">
                 <label for="firstname">First Name:</label>
                 <input type="text" class="form-control"  id="firstname" value="<?php echo $row['firstname'];  ?>" placeholder="Enter Firstname" name="firstname">
@@ -96,17 +110,20 @@ if(isset($_POST['btnsave'])){
                 <label for="age">Age:</label>
                 <input type="text" class="form-control" value="<?php echo $row['age'];  ?>" id="age" placeholder="Enter age" name="age">
             </div>
+            </div>
+            <br>
 
 
-            <h2>Brief Pain Inventory(BPI)</h2>
+            <h4>Brief Pain Inventory(BPI)</h4>
+            <div class="panel1" id="panel1">
 
             <div class="mb-3 mt-3">
-                <label for="q1">How much relief have pain treatments or medications FROM THIS CLINIC provided?</label>
+                <label for="q1">Q1. How much relief have pain treatments or medications FROM THIS CLINIC provided?</label>
                 <input type="text" class="form-control" value="<?php echo $row['q1'];  ?>" id="q1" placeholder="Enter score (0-100)" name="q1">
             </div>
             <div id="bpi">
                 <div class="mb-3 mt-3">
-                    <label for="q2">Please rate your pain based on the number that best describes your pain at it’s
+                    <label for="q2">Q2. Please rate your pain based on the number that best describes your pain at it’s
                         WORST
                         in the past week</label>
                     <input type="text" class="form-control" value="<?php echo $row['q2'];  ?>" id="q2" placeholder="Enter score (0-10)" name="q2">
@@ -115,73 +132,78 @@ if(isset($_POST['btnsave'])){
 
 
                 <div class="mb-3 mt-3">
-                    <label for="q3">Please rate your pain based on the number that best describes your pain at it’s
+                    <label for="q3">Q3. Please rate your pain based on the number that best describes your pain at it’s
                         LEAST in
                         the past week.</label>
                     <input type="text" class="form-control" value="<?php echo $row['q3'];  ?>" id="q3" placeholder="Enter score (0-10)" name="q3">
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q4">Please rate your pain based on the number that best describes your pain on the
+                    <label for="q4">Q4. Please rate your pain based on the number that best describes your pain on the
                         Average.</label>
                     <input type="text" class="form-control" value="<?php echo $row['q4'];  ?>" id="q4" placeholder="Enter score (0-10)" name="q4">
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q5">Please rate your pain based on the number that best describes your pain that tells
+                    <label for="q5">Q5. Please rate your pain based on the number that best describes your pain that tells
                         how much pain you have RIGHT NOW.</label>
                     <input type="text" class="form-control" id="q5" value="<?php echo $row['q5'];  ?>" placeholder="Enter score (0-10)" name="q5">
                     <span class="error" id="spanerrormsg-q5"></span>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q6">Based on the number that best describes how during the past week pain has
+                    <label for="q6">Q6. Based on the number that best describes how during the past week pain has
                         INTERFERED with your: General Activity.</label>
                     <input type="text" class="form-control" id="q6" value="<?php echo $row['q6'];  ?>" placeholder="Enter score (0-10)" name="q6">
                     <span class="error" id="spanerrormsg-q6"></span>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q7">Based on the number that best describes how during the past week pain has
+                    <label for="q7">Q7. Based on the number that best describes how during the past week pain has
                         INTERFERED with your: Mood.</label>
                     <input type="text" class="form-control" id="q7" value="<?php echo $row['q7'];  ?>" placeholder="Enter score (0-10)" name="q7">
                     <span class="error" id="spanerrormsg-q7"></span>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q8">Based on the number that best describes how during the past week pain has
+                    <label for="q8">Q8. Based on the number that best describes how during the past week pain has
                         INTERFERED with your: Walking ability.</label>
                     <input type="text" class="form-control" id="q8" value="<?php echo $row['q8'];  ?>" placeholder="Enter score (0-10)" name="q8">
                     <span class="error" id="spanerrormsg-q8"></span>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q9">Based on the number that best describes how during the past week pain has
+                    <label for="q9">Q9. Based on the number that best describes how during the past week pain has
                         INTERFERED with your: Normal work (includes work both outside the home and
                         housework).</label>
                     <input type="text" class="form-control" id="q9" value="<?php echo $row['q9'];  ?>" placeholder="Enter score (0-10)" name="q9">
                     <span class="error" id="spanerrormsg-q9"></span>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q10">Based on the number that best describes how during the past week pain has
+                    <label for="q10">Q10. Based on the number that best describes how during the past week pain has
                         INTERFERED with your: RelaTonships with other people.</label>
                     <input type="text" class="form-control" id="q10" value="<?php echo $row['q10'];  ?>" placeholder="Enter score (0-10)" name="q10">
                     <span class="error" id="spanerrormsg-q10"></span>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q11">Based on the number that best describes how during the past week pain has
+                    <label for="q11">Q11. Based on the number that best describes how during the past week pain has
                         INTERFERED with your: Sleep.</label>
                     <input type="text" class="form-control" id="q11" value="<?php echo $row['q11'];  ?>" placeholder="Enter score (0-10)" name="q11">
                     <span class="error" id="spanerrormsg-q11"></span>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="q12">Based on the number that best describes how during the past week pain has
+                    <label for="q12">Q12. Based on the number that best describes how during the past week pain has
                         INTERFERED with your: Enjoyment of life.</label>
                     <input type="text" class="form-control" id="q12" value="<?php echo $row['q12'];  ?>" placeholder="Enter score (0-10)" name="q12">
                     <span class="error" id="spanerrormsg-q12"></span>
                 </div>
             </div>
-            <h2>Total Score</h2>
+            </div>
+            <br>
+            <h4>Total Score</h4>
+            <div class="panel1" id="panel1">
+
             <div class="mb-3 mt-3">
                 <label for="total_score">Total score</label>
                 <input type="text" class="form-control" id="total_score" value="<?php echo $row['total_score'];  ?>" placeholder="Enter Total Score"
                     name="total_score">
             </div>
-            <input type="submit" class="btn btn-primary" name="btnsave" value="save"/>
+            </div><br>
+            <input type="submit" class="btn btn-primary" name="btnsave" value="Update"/>
             
         </form>
     </div>

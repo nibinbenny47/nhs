@@ -28,11 +28,14 @@ if ($stmt === false) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <?php include("header.php");?>
 <div class="container mt-3">
-  <h2>Neuromodulation form details</h2>
+  <h2>Neuromodulation Form Details</h2>
+  <br><br>
+         
   <table id="formdetails" class="table table-hover">
     <thead>
       <tr>
@@ -55,15 +58,15 @@ if ($stmt === false) {
        
     
     ?>
-      <tr>
-        <td><a href="patientresponse.php?id=<?php echo $row["id"];  ?>">View</a></td>
+      <tr onclick="window.location.href='patientresponse.php?id=<?php echo $row['id']; ?>'">
+        <td><a href="patientresponse.php?id=<?php echo $row["id"];  ?>"><i class="fas fa-eye"></i></a></td>
         <td><?php echo $row['submitted_at']->format('Y-m-d H:i:s');?>
         <td><?php echo $row['firstname'];?> </td>
         <td><?php echo $row['surname'];?></td>
         <td><?php echo $row['age'];?></td>
          <td><?php echo $row['date_of_birth']->format('Y-m-d');?>
         <td><?php echo $row['total_score'];?></td>
-      </tr>
+        </a></tr>
       <?php
 }
   ?>

@@ -22,7 +22,8 @@
             header("Location: admin/index.php");
             exit();
         } else {
-            echo "Invalid login credentials.";
+            echo '<div class="message" style=" background-color: #f53722;margin: 20px 0;border: 1px solid #c3e6cb;">Invalid login credentials</div>';
+
         }
     }
      
@@ -50,13 +51,13 @@
             <h2>Admin Login Form</h2>
             <div class="mb-3 mt-3">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <input type="email" required class="form-control" id="email" placeholder="Enter email" name="email">
             </div>
             <div class="mb-3 mt-3">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                <input type="password" required class="form-control" id="password" placeholder="Enter password" name="password">
             </div>
-            <input type="submit" class="btn btn-primary" name="btnsave" value="Register"/>
+            <input type="submit" class="btn btn-primary" name="btnsave" value="Login"/>
 
            
         </form>
