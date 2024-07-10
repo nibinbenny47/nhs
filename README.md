@@ -1,5 +1,8 @@
 Neuromodulation form
 
+![image](https://github.com/nibinbenny47/nhs/assets/75657897/8d91634e-acb0-491e-a2c8-4e2aa2bd1630)
+
+
 Introduction
 
 The project NHS contains a Neuromodulation Form which contains 3 panels
