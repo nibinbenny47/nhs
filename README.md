@@ -61,6 +61,11 @@ Product : Microsoft SQL Server Developer (64-bit)
 
 version :15.0.2000.5
 
+IIS is used as web server
+
+The root folder of the project is C:\inetpub\wwwroot\nhs
+
+
 After cloned the project, run the neuromodulation.php file at first
 
 About Files
