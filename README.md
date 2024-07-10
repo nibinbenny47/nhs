@@ -7,74 +7,74 @@ Introduction
 
 The project NHS contains a Neuromodulation Form which contains 3 panels
 
-  •	Patient Details
-  
-  •	BPI
-  
-  •	Total Score
+              •	Patient Details
+              
+              •	BPI
+              
+              •	Total Score
   
 Admin module is used to view,edit and delete the patient response
 Register as an admin with email and password and after login , you will be redirected to Admin Page
 
- • Click on row in the table and can see the Patient response 
-
- • Click Edit button on Bottom to edit the response
-
- • Click Delete button on Botton to delete the response
+           • Click on row in the table and can see the Patient response 
+          
+           • Click Edit button on Bottom to edit the response
+          
+           • Click Delete button on Botton to delete the response
 
 
 2 Tables are created in Microsoft SQL Server Management Studio
 
-Database name : db_nhs
-
-Tables
-
-•	tbl_neuromodulation
-
-•	tbl_user
+        Database name : db_nhs
+        
+        Tables
+        
+        •	tbl_neuromodulation
+        
+        •	tbl_user
 
 8 Stored Procedures used
 
-•	CheckLoginDetails
+                •	CheckLoginDetails
+                
+                •	Deleteneuromodulation
+                
+                •	GetLoginDetails
+                
+                •	GetNeuromodulationDetails
+                
+                •	GetPatientResponseById
+                
+                •	Insertneuromodulation
+                
+                •	Insertuser
+                
+                •	Updateneuromodulation
 
-•	Deleteneuromodulation
+ How to set up and Run the Application?
 
-•	GetLoginDetails
-
-•	GetNeuromodulationDetails
-
-•	GetPatientResponseById
-
-•	Insertneuromodulation
-
-•	Insertuser
-
-•	Updateneuromodulation
-
-How to set up and Run the Application?
-
-Php Verison 8.2 is used
-
-DBMS
-
-Product : Microsoft SQL Server Developer (64-bit)
-
-version :15.0.2000.5
-
-IIS is used as web server
+              Php Verison 8.2 is used
+              
+              DBMS
+              
+              Product : Microsoft SQL Server Developer (64-bit)
+              
+              version :15.0.2000.5
+              
+              IIS is used as web server
 
 The root folder of the project is C:\inetpub\wwwroot\nhs
 
 
-After cloned the project, run the neuromodulation.php file at first
+      After cloned the project, run the neuromodulation.php file at first
 
 About Files
 
-•	Connection.php – database name,server name,username and password added here
-
-•	assets/style.css – form style added here
-
-•	header.php – navigation bar details added here
+          •	Connection.php – database name,server name,username and password added here
+          
+          •	assets/style.css – form style added here
+          
+          •	header.php – navigation bar details added here
 
 
 Link to open Neuromodulation form:  http://localhost/nhs/neuromodulation.php
@@ -111,6 +111,8 @@ Click on Edit button : http://localhost/nhs/admin/edit.php?id=1
 ![image](https://github.com/nibinbenny47/nhs/assets/75657897/16ab7ce9-1535-4f41-a14e-b9125b793dff)
 
  
+Click on Delete button to delete : http://localhost/nhs/admin/patientresponse.php?id=8
+![image](https://github.com/nibinbenny47/nhs/assets/75657897/24f3b57e-6c44-421e-a722-804925a19844)
 
  
 
