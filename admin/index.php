@@ -11,10 +11,7 @@ if ($stmt === false) {
     die(print_r(sqlsrv_errors(), true));
 }
 
-// Fetch and display results
 
-// Close the connection
-// sqlsrv_close($conn);
 
 ?>
 <!DOCTYPE html>

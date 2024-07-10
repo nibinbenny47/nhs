@@ -28,7 +28,8 @@
     } else {
         echo '<div class="message" style=" background-color: #04c25d;margin: 20px 0;border: 1px solid #c3e6cb;">New record created successfully</div>';
     }
-     
+    
+    sqlsrv_close($conn);
   }
 ?>
 
@@ -47,19 +48,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        .error {
-            color: red;
-            font-size: 0.875em;
-        }
-        .panel1{
-        background-color: #d6d0d0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        
-        }
-    </style>
+    <link rel="stylesheet" href="assets/style.css">
+   
 
 </head>
 

@@ -10,10 +10,7 @@ $params = array($id);
 
 $sql = sqlsrv_query($conn, $query, $params);
 
-// Check if the query was successful
-// if ($sql === false) {
-//     die(print_r(sqlsrv_errors(), true));
-// }
+
 
 $row = sqlsrv_fetch_array($sql, SQLSRV_FETCH_ASSOC);
 if ($row === false) {
@@ -41,20 +38,14 @@ if ($_GET["deleteid"]){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../assets/style.css">
+
     <script>
         $(document).ready(function(){
             $('input').attr('readonly', true);
         });
     </script>
-    <style>
-        .panel1{
-        background-color: #d6d0d0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        
-        }
-    </style>
+    
 </head>
 <body>
 <?php include("header.php");?>
@@ -176,7 +167,6 @@ if ($_GET["deleteid"]){
             </div>
             </div><br>
             <a class="btn btn-primary" href="edit.php?id=<?php echo $row["id"];  ?>">Edit</a>
-            <!-- <a class="btn btn-primary" href="delete.php?id=<?php echo $row["id"];  ?>">Delete</a> -->
             <a class="btn btn-primary" href="patientresponse.php?deleteid=<?php echo $row["id"];  ?>">Delete</a>
         </form>
     </div>

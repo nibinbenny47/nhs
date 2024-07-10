@@ -2,14 +2,11 @@
 include("../connection.php");
 $id = $_GET["id"];
 
-// Prepare the SQL statement to call the stored procedure
 $query = "{call GetPatientresponsebyid(?)}";
 
-// Initialize the parameter array
-$params = array($id);
+$table_fields = array($id);
 
-// Execute the statement
-$sql = sqlsrv_query($conn, $query, $params);
+$sql = sqlsrv_query($conn, $query, $table_fields);
 
 // Check if the query was successful
 if ($sql === false) {
@@ -54,6 +51,7 @@ if(isset($_POST['btnsave'])){
         echo "New record created successfully";
     }
 
+sqlsrv_close($conn);
      
   }
 ?>
@@ -68,19 +66,9 @@ if(isset($_POST['btnsave'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        .error {
-            color: red;
-            font-size: 0.875em;
-        }
-        .panel1{
-        background-color: #d6d0d0;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/style.css">
+
+  
 </head>
 <body>
 <?php include("header.php");?>

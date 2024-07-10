@@ -26,6 +26,7 @@
 
         }
     }
+    sqlsrv_close($conn);
      
   }
 ?>
