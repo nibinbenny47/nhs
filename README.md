@@ -62,7 +62,7 @@ After cloned the project, run the neuromodulation.php file at first
 
 About Files
 
-•	Connection.php – database connection added here
+•	Connection.php – database name,server name,username and password added here
 
 •	assets/style.css – form style added here
 
